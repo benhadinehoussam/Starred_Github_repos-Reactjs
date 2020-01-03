@@ -1,21 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import { getReposIds } from './services/GitHubAPI'
+import React from 'react';
+import { RepoContainer } from './containers/RepoContainer';
 
-export const  App = () => {
-    
-    // hold data after calling an API and prevent blocking the UI rendering; app more interactive
-    
-    //initiliaze where to store data
-    const [reposIds,setReposIds] = useState([]);
-
-    // update the value of repos ID, call the setter ;-)
-    useEffect(() => {
-        getReposIds().then(repo => setReposIds(repo));
-    }, []);
-    return(
-        <p>{JSON.stringify(reposIds)}</p>
-    )
-
-
-};
+export const  App = () => <RepoContainer/>
  
