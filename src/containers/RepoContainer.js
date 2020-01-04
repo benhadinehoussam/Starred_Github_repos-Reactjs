@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { getReposIds } from '../services/GitHubAPI'
+import { getReposIds } from '../services/GitHubAPI';
+import { Repository } from '../components/Repository';
 
 export const  RepoContainer = () => {
     
@@ -10,11 +11,12 @@ export const  RepoContainer = () => {
 
     // update the value of repos ID, call the setter ;-)
     useEffect(() => {
-        getReposIds().then(repo => setReposIds(repo));
+        getReposIds().then(data => setReposIds(data));
     }, []);
-    return(
-        <p>{JSON.stringify(reposIds)}</p>
-    )
+    // looping over repos
+    // console.log(reposIds);
 
-
+    return Object.entries(reposIds).map(lemon => (
+        <Repository key={lemon} reposId={lemon}/>
+    )); 
 };

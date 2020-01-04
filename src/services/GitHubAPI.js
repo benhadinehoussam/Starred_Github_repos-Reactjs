@@ -10,7 +10,7 @@ export const getReposIds = async () => {
     // results is a promise need to be resolved
     const results = await axios.get(reposUrl).then(({ data }) => data.items);
     results.forEach(element => {
-    console.log(element);
+    // console.log(element);
     resp[element.name] = {};
     resp[element.name]["Description"] = element.description;
     resp[element.name]["Avatar"] = element.owner.avatar_url;
