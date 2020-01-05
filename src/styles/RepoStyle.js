@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+
+export const Header = styled.header`
+top: 0;
+min-height: 70px;
+background-color: #2F4F4F;
+font-weight: 300;
+font-size: 60px;
+text-align: center;
+font-family: Comic Sans MS;
+`;
 export const RepoWrapper = styled.section`
 
 padding-top: 10px;
@@ -28,8 +38,9 @@ color: #333;
 `;
 
 export const StyledImg = styled.img`
-width: 100%;
-  height: 200px;
+    margin-left: 20px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: contain;
   align: left;
